@@ -3,12 +3,6 @@
 A **Python-based trading bot** with both a **CLI interface** and a **Streamlit Web UI** for placing orders on the **Binance Spot Testnet** (USDT pairs).
 This project allows users to safely test trading strategies without using real money.
 
-## Live Demo
-
-**Try the Web App:**
-https://trading-bot-app.streamlit.app/
-
----
 
 ## Overview
 
@@ -217,8 +211,3 @@ logs/trading_bot_YYYYMMDD.log
   This project uses the **Spot Testnet**, which only requires **GitHub login** to generate API keys.
 
 ---
-
-## Note
-Binance Spot Testnet may return error 451 (geo-restriction) from certain 
-locations including India. Use a VPN connected to a US/EU server to run 
-the bot. The code itself is correct and fully functional.

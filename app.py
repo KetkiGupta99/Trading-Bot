@@ -7,13 +7,20 @@ Run with:
 
 import os
 import streamlit as st
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    load_dotenv = lambda: None
 from bot.client import BinanceSpotClient, BinanceAPIError, BinanceNetworkError
 from bot.validators import validate_all, ValidationError
 from bot.logging_config import setup_logging
 
 load_dotenv()
-logger = setup_logging()
+try:
+    logger = setup_logging()
+except Exception:
+    import logging
+    logger = logging.getLogger("trading_bot")
 
 # Read credentials — Streamlit Cloud uses st.secrets, local dev uses .env
 def get_env(key):

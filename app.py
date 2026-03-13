@@ -29,7 +29,7 @@ def get_env(key):
     except Exception:
         return os.getenv(key, "")
 
-# ── Page config ──────────────────────────────────────────────────────────────
+# Page config
 st.set_page_config(
     page_title="Binance Testnet Bot",
     page_icon="📈",
@@ -39,7 +39,7 @@ st.set_page_config(
 st.title("📈 Binance Spot Testnet Trading Bot")
 st.caption("Connected to testnet.binance.vision — all trades are simulated")
 
-# ── Sidebar: API credentials ──────────────────────────────────────────────────
+# Sidebar: API credentials
 with st.sidebar:
     st.header("🔑 API Credentials")
     api_key    = st.text_input("API Key",    value=get_env("BINANCE_API_KEY"),    type="password")
@@ -73,13 +73,13 @@ def get_avg_price(order):
     return price if float(price) > 0 else "N/A"
 
 
-# ── Tabs ──────────────────────────────────────────────────────────────────────
+# Tabs
 tab_place, tab_account, tab_orders, tab_logs = st.tabs([
     "🛒 Place Order", "💰 Account", "📋 Open Orders", "📄 Logs"
 ])
 
 
-# ── Tab 1: Place Order ────────────────────────────────────────────────────────
+# Tab 1: Place Order
 with tab_place:
     st.subheader("Place a New Order")
 
@@ -151,7 +151,7 @@ with tab_place:
                 logger.error("Order failed via UI: %s", e)
                 st.stop()
 
-        st.success("✅ Order placed successfully!")
+        st.success(" Order placed successfully!")
 
         # Display response
         res_cols = st.columns(4)
@@ -164,7 +164,7 @@ with tab_place:
             st.json(order)
 
 
-# ── Tab 2: Account Balances ───────────────────────────────────────────────────
+# Tab 2: Account Balances
 with tab_account:
     st.subheader("Account Balances")
 
@@ -206,7 +206,7 @@ with tab_account:
         st.info("Click **Refresh Balances** to load your account.")
 
 
-# ── Tab 3: Open Orders ────────────────────────────────────────────────────────
+# Tab 3: Open Orders
 with tab_orders:
     st.subheader("Open Orders")
 
@@ -241,7 +241,7 @@ with tab_orders:
         st.info("Click **Refresh Orders** to load open orders.")
 
 
-# ── Tab 4: Logs ───────────────────────────────────────────────────────────────
+# Tab 4: Logs 
 with tab_logs:
     st.subheader("Log Viewer")
 

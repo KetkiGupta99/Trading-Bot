@@ -52,7 +52,7 @@ trading_bot/
 ├── requirements.txt
 └── README.md
 ```
-## ⚙️ Setup
+##  Setup
 
 ### 1️ Get Testnet API Credentials
 

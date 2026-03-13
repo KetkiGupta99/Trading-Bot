@@ -199,6 +199,24 @@ logs/trading_bot_YYYYMMDD.log
 2026-03-14T00:48:41Z | DEBUG    | trading_bot.client | Server time offset: -456 ms
 2026-03-14T00:48:41Z | INFO     | trading_bot.client | Placing order: symbol=BTCUSDT side=BUY type=MARKET qty=0.001 price=None stopPrice=None
 ```
+---
+
+#  Assumptions
+
+* All orders are executed on the **Binance Spot Testnet** available at
+  `https://testnet.binance.vision`
+
+* API credentials are loaded:
+
+  * From the **`.env` file** when running locally
+  * From **Streamlit Secrets** when the app is deployed
+
+* **LIMIT orders** use `timeInForce = GTC` (**Good Till Cancelled**) by default.
+
+* The **Binance Futures Testnet** (`https://testnet.binancefuture.com`) now requires **KYC verification**.
+  This project uses the **Spot Testnet**, which only requires **GitHub login** to generate API keys.
+
+---
 
 ## Note
 Binance Spot Testnet may return error 451 (geo-restriction) from certain 

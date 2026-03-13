@@ -22,6 +22,9 @@ except Exception:
     import logging
     logger = logging.getLogger("trading_bot")
 
+
+
+
 # Read credentials — Streamlit Cloud uses st.secrets, local dev uses .env
 def get_env(key):
     try:
@@ -116,10 +119,12 @@ with tab_place:
     if price:
         summary_cols[4].metric("Price", price)
 
-    place_btn = st.button("🚀 Place Order", type="primary", use_container_width=True)
+    place_btn = st.button("🚀 Place Order", type="primary", use_container_width=True,)
+    
 
     if place_btn:
         # Validate
+        print(api_key, api_secret)
         try:
             params = validate_all(
                 symbol=symbol,
